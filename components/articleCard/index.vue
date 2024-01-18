@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { ref, reactive, defineProps } from 'vue';
 
 interface ArticleData {
   image: string;
@@ -19,12 +19,13 @@ interface ArticleData {
   id: string;
 }
 
-const props = defineProps<{articleData: ArticleData;}>();
+const props = defineProps<{
+  articleData: ArticleData;
+}>();
 
-const imageSource = ref<string>(props.articleData.image);
-const parts = imageSource.value.split('/');
-const altText = parts[parts.length - 1];
-
+const imageSource = ref(props.articleData.image);
+const parts: string[] = imageSource.value.split('/');
+const altText: string = parts[parts.length - 1];
 
 const state = reactive({
   showMore: false,
