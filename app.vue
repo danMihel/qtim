@@ -1,0 +1,13 @@
+<template>
+  <header>
+    <vHeader/>
+  </header>
+  <main>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
+  </main>
+  <footer>
+    <VFooter/>
+  </footer>
+</template>
